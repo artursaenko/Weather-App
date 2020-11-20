@@ -50,12 +50,12 @@ class ViewController: UIViewController {
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "MMMM d, EEEE"
                         self.dateLabel.text = dateFormatter.string(from: Date())
-                        switch model.condition.first!.type {
+                        switch model.condition.first!.main {
                         case .clear:
                             self.weatherImageView.image = UIImage(named: "Sun")?.withRenderingMode(.alwaysTemplate)
-                        case .fewClouds, .scattereClouds, .brokenClouds:
+                        case .clouds:
                             self.weatherImageView.image = UIImage(named: "PartlySunny")?.withRenderingMode(.alwaysTemplate)
-                        case .showerRain, .rain:
+                        case .drizzle, .rain:
                             self.weatherImageView.image = UIImage(named: "Rain")?.withRenderingMode(.alwaysTemplate)
                         case .thunderstorm:
                             self.weatherImageView.image = UIImage(named: "Storm")?.withRenderingMode(.alwaysTemplate)
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
                         case .mist:
                             self.weatherImageView.image = UIImage(named: "Haze")?.withRenderingMode(.alwaysTemplate)
                         }
-                        self.weatherConditionLabel.text = model.condition.first!.type.rawValue.capitalized
+                        self.weatherConditionLabel.text = model.condition.first!.main.rawValue
                         self.degreeLabel.text = "\(round(model.temperature.real))℃"
                         self.setViewsHidden(false)
                     }
@@ -115,6 +115,7 @@ class ViewController: UIViewController {
     }
     
     private func showAlert(_ error: Error) {
+        print(error)
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -125,6 +126,7 @@ class ViewController: UIViewController {
 
 extension ViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations)
         guard let location = locations.last else { return }
         loadWeather(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
         locationManager.stopUpdatingLocation()

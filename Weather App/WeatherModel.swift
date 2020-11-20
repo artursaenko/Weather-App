@@ -7,15 +7,13 @@
 //
 
 enum ConditionType: String, Codable {
-    case clear = "clear sky"
-    case fewClouds = "few clouds"
-    case scattereClouds = "scattered clouds"
-    case brokenClouds = "broken clouds"
-    case showerRain = "shower rain"
-    case rain = "rain"
-    case thunderstorm = "thunderstorm"
-    case snow = "snow"
-    case mist = "mist"
+    case clear = "Clear"
+    case clouds = "Clouds"
+    case drizzle = "Drizzle"
+    case rain = "Rain"
+    case thunderstorm = "Thunderstorm"
+    case snow = "Snow"
+    case mist = "Atmosphere"
 }
 
 struct WeatherModel: Codable {
@@ -31,12 +29,10 @@ struct WeatherModel: Codable {
 }
 
 struct ConditionWeatherModel: Codable {
-    let main: String
-    let type: ConditionType
+    let main: ConditionType
     
     enum CodingKeys: String, CodingKey {
         case main = "main"
-        case type = "description"
     }
 }
 

@@ -26,6 +26,8 @@
 		B1199DD72566D8A8004DFCAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B1199DD92566D8A8004DFCAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B1199DE02566E389004DFCAA /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		C15F9E9F25679489005FB171 /* Dnipro.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Dnipro.gpx; sourceTree = "<group>"; };
+		C15F9EA0256794C9005FB171 /* Dnipro.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = Dnipro.gpx; path = "Weather App/Dnipro.gpx"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		B1199DBF2566D8A6004DFCAA = {
 			isa = PBXGroup;
 			children = (
+				C15F9EA0256794C9005FB171 /* Dnipro.gpx */,
 				B1199DCA2566D8A6004DFCAA /* Weather App */,
 				B1199DC92566D8A6004DFCAA /* Products */,
 			);
@@ -62,6 +65,7 @@
 				B1199DCD2566D8A6004DFCAA /* SceneDelegate.swift */,
 				B1199DE02566E389004DFCAA /* WeatherModel.swift */,
 				B1199DCF2566D8A6004DFCAA /* ViewController.swift */,
+				C15F9E9F25679489005FB171 /* Dnipro.gpx */,
 				B1199DD12566D8A6004DFCAA /* Main.storyboard */,
 				B1199DD42566D8A8004DFCAA /* Assets.xcassets */,
 				B1199DD62566D8A8004DFCAA /* LaunchScreen.storyboard */,
